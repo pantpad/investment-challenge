@@ -29,7 +29,6 @@ export default function InvestmentTable({ inputsData }) {
               {investmentResults.map((investment) => {
                 investedCapital += inputsData.annualInvestment;
                 totalInterest += +investment.interest;
-                console.log(investment);
 
                 return (
                   <tr key={investment.year}>

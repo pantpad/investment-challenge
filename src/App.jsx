@@ -12,7 +12,6 @@ function areInputsComplete(object) {
   let areAllTyped = Object.entries(object).every(([key, value]) => {
     return value !== "";
   });
-  console.log(areAllTyped);
   return areAllTyped;
 }
 
