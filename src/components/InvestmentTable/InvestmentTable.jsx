@@ -1,10 +1,19 @@
 import "./InvestmentTable.css";
 import { calculateInvestmentResults, formatter } from "../../util/investment";
 
+function returnNumObject(object) {
+  const numericObject = {};
+  Object.entries(object).map(([key, value]) => {
+    numericObject[key] = +value;
+  });
+  return numericObject;
+}
+
 export default function InvestmentTable({ inputsData }) {
-  const investmentResults = calculateInvestmentResults({ ...inputsData });
   //prettier-ignore
-  let investedCapital = inputsData.initialInvestment;
+  const investmentResults = calculateInvestmentResults(returnNumObject({ ...inputsData }));
+  //prettier-ignore
+  let investedCapital = +inputsData.initialInvestment;
   let totalInterest = 0;
 
   return (
@@ -27,7 +36,8 @@ export default function InvestmentTable({ inputsData }) {
             <tbody>
               {investmentResults.map((investment) => {
                 investedCapital += inputsData.annualInvestment;
-                totalInterest += investment.interest;
+                totalInterest += +investment.interest;
+                console.log(investment);
 
                 return (
                   <tr key={investment.year}>

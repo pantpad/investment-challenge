@@ -41,6 +41,8 @@ export default function InvestmentInputs({ inputsData, handleInputChange }) {
               type="number"
               name="duration"
               id="duration"
+              min={0}
+              max={30}
               value={inputsData.duration}
               onChange={(e) => handleInputChange(e)}
             />
