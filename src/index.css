@@ -33,6 +33,10 @@ p {
   text-wrap: pretty;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Quicksand", sans-serif;
