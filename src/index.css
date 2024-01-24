@@ -8,10 +8,29 @@
     rgba(43, 152, 109, 1) 100%
   );
   --th-color: #7fffd4;
+  --fs-label: clamp(0.6rem, 2vw, 1.6rem);
+  --fs-th: clamp(0.8rem, 1vw, 1.2rem);
 }
 
-* {
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  max-width: var(--max-paragraph-width);
+  text-wrap: pretty;
 }
 
 body {
