@@ -8,6 +8,22 @@ const initialInputs = {
   duration: "",
 };
 
+function areInputsComplete(object) {
+  let areAllTyped = Object.entries(object).every(([key, value]) => {
+    return value !== "";
+  });
+  console.log(areAllTyped);
+  return areAllTyped;
+}
+
+function returnNumObject(object) {
+  const numericObject = {};
+  Object.entries(object).map(([key, value]) => {
+    numericObject[key] = +value;
+  });
+  return numericObject;
+}
+
 function App() {
   const [inputsData, setInputsData] = useState(initialInputs);
   function handleInputChange(e) {
@@ -23,7 +39,13 @@ function App() {
         inputsData={inputsData}
         handleInputChange={handleInputChange}
       />
-      <InvestmentTable inputsData={inputsData} />
+      <InvestmentTable
+        inputsData={
+          areInputsComplete(inputsData)
+            ? inputsData
+            : returnNumObject(inputsData)
+        }
+      />
     </main>
   );
 }
