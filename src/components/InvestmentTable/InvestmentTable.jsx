@@ -5,7 +5,7 @@ export default function InvestmentTable({ inputsData }) {
   //prettier-ignore
   const investmentResults = calculateInvestmentResults({ ...inputsData });
   //prettier-ignore
-  let investedCapital = +inputsData.initialInvestment;
+  let investedCapital = (inputsData.initialInvestment ? +inputsData.initialInvestment : 0);
   let totalInterest = 0;
 
   return (
@@ -27,7 +27,9 @@ export default function InvestmentTable({ inputsData }) {
             </thead>
             <tbody>
               {investmentResults.map((investment) => {
-                investedCapital += inputsData.annualInvestment;
+                investedCapital += inputsData.annualInvestment
+                  ? inputsData.annualInvestment
+                  : 0;
                 totalInterest += +investment.interest;
 
                 return (
