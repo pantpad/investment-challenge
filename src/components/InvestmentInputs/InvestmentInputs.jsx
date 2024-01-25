@@ -13,6 +13,7 @@ export default function InvestmentInputs({ inputsData, handleInputChange }) {
               id="initial-investment"
               min={0}
               onChange={(e) => handleInputChange(e)}
+              required
             />
           </div>
           <div className="input">
@@ -23,6 +24,7 @@ export default function InvestmentInputs({ inputsData, handleInputChange }) {
               id="annual-investment"
               min={0}
               onChange={(e) => handleInputChange(e)}
+              required
             />
           </div>
           <div className="input">
@@ -32,6 +34,7 @@ export default function InvestmentInputs({ inputsData, handleInputChange }) {
               name="expectedReturn"
               id="expected-return"
               onChange={(e) => handleInputChange(e)}
+              required
             />
           </div>
           <div className="input">
@@ -43,6 +46,7 @@ export default function InvestmentInputs({ inputsData, handleInputChange }) {
               min={0}
               max={30}
               onChange={(e) => handleInputChange(e)}
+              required
             />
           </div>
         </div>

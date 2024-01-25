@@ -11,8 +11,8 @@ export default function InvestmentTable({ inputsData }) {
   return (
     <>
       <div className="table-container">
-        {investmentResults.length < 1 ? (
-          <p>Please enter a duration greater than zero!</p>
+        {investmentResults.length < 1 || investmentResults.length > 30 ? (
+          <p>Please enter a valid duration!</p>
         ) : (
           <table>
             <caption>Calculated Investment</caption>

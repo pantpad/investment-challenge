@@ -30,4 +30,26 @@
 
 .input input {
   width: 100%;
+  padding: 0.33em;
+  outline: none;
+  border: none;
+}
+
+.input input:is(:active, :hover):is(:valid) {
+  outline: 1px solid rgba(0, 255, 0, 0.6);
+  box-shadow: 0 0 0.25rem rgba(10, 255, 35, 0.6);
+}
+
+.input input:is(:active, :hover):is(:invalid) {
+  outline: 1px solid red;
+  box-shadow: 0 0 0.25rem rgba(255, 10, 35, 0.6);
+}
+
+/*Remove Inputs up and down arrows*/
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
