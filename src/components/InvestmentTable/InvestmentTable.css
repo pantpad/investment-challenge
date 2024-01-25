@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   padding: 1em 2em;
+  padding-block-end: 0;
+  margin-block-end: 10px;
 }
 
 table {
@@ -19,6 +21,30 @@ td {
 th {
   color: var(--th-color);
   font-size: var(--fs-th);
+}
+
+.table-container::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+  height: 10px;
+  margin-block-end: 1em;
+}
+.table-container::-webkit-scrollbar-track {
+  background: rgb(60, 60, 60);
+  border-radius: 100vw;
+}
+.table-container::-webkit-scrollbar-thumb {
+  background: #474c50;
+  border: 2px solid rgb(60, 60, 60);
+  border-radius: 100vw;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(51, 140, 229, 0.28);
+}
+
+.table-container::selection {
+  background: rgba(35, 131, 226, 0.28);
 }
 
 @media (max-width: 81em) {
